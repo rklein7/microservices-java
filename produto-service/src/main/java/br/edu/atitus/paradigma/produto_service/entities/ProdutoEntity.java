@@ -10,72 +10,67 @@ import jakarta.persistence.Transient;
 @Entity
 @Table(name = "produto")
 public class ProdutoEntity {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+	
+	private String marca;
+	private String modelo;
+	private double valor;
+	
+	@Transient
+	private String ambiente;
+	@Transient
+	private double valorConvertido;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+	public double getValorConvertido() {
+		return valorConvertido;
+	}
 
-    private String marca;
-    private String modelo;
-    private double valor;
+	public void setValorConvertido(double valorConvertido) {
+		this.valorConvertido = valorConvertido;
+	}
 
-    @Transient // Indica que esse atributo não faz parete da tabela para o DB
-    private String ambiente;
+	public Integer getId() {
+		return id;
+	}
 
-    @Transient
-    private double valorConvertido;
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public double getValorConvertido() {
-        return valorConvertido;
-    }
+	public String getMarca() {
+		return marca;
+	}
 
-    public void setValorConvertido(double valorConvertido) {
-        this.valorConvertido = valorConvertido;
-    }
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public String getModelo() {
+		return modelo;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
 
-    public String getMarca() {
-        return marca;
-    }
+	public double getValor() {
+		return valor;
+	}
 
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
 
-    public String getModelo() {
-        return modelo;
-    }
+	public String getAmbiente() {
+		return ambiente;
+	}
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
-    public String getAmbiente() {
-        return ambiente;
-    }
-
-    public void setAmbiente(String ambiente) {
-        this.ambiente = ambiente;
-    }
-
-
-
-
-
+	public void setAmbiente(String ambiente) {
+		this.ambiente = ambiente;
+	}
+	
+	
 
 }

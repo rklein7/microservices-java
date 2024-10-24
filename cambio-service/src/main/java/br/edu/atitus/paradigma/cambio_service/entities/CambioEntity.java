@@ -10,7 +10,7 @@ import jakarta.persistence.Transient;
 @Entity
 @Table(name = "cambio")
 public class CambioEntity {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -21,7 +21,6 @@ public class CambioEntity {
 	
 	@Transient
 	private String ambiente;
-	
 	@Transient
 	private double valorConvertido;
 
@@ -72,5 +71,6 @@ public class CambioEntity {
 	public void setValorConvertido(double valorConvertido) {
 		this.valorConvertido = valorConvertido;
 	}
+
 	
 }

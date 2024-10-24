@@ -8,10 +8,8 @@ import org.springframework.stereotype.Repository;
 import br.edu.atitus.paradigma.cambio_service.entities.CambioEntity;
 
 @Repository
-public interface CambioRepository extends JpaRepository<CambioEntity, Integer> {
-
+public interface CambioRepository extends JpaRepository<CambioEntity, Integer>{
+	
 	Optional<CambioEntity> findByOrigemAndDestino(String origem, String destino);
-	
-	
-	
+
 }
